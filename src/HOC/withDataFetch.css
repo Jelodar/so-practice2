@@ -1,0 +1,63 @@
+.generic-loading {
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  color: #333;
+}
+
+.generic-loading_placeholder {
+  background-color: #f5f5f5;
+}
+
+.generic-loading_placeholder p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 20px;
+}
+
+.generic-loading_placeholder .spinner {
+  margin: 0 0.5em;
+  border: 1px solid #cbcbcb;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  animation: spin 1s linear infinite;
+  background: linear-gradient(#b4b6b8, transparent);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.generic-loading_error {
+  background-color: #f5f5f5;
+}
+
+.generic-loading_error p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 20px;
+}
+
+.generic-loading_error button {
+  background-color: #2196f3;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.generic-loading_error button:hover {
+  background-color: #1976d2;
+}

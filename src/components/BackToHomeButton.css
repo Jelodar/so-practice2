@@ -1,0 +1,10 @@
+.back-to-home-btn {
+  padding: 1em;
+  display: inline-block;
+  background: #0061cb;
+  color: #fff;
+  margin: 15px auto;
+  border-radius: 5px;
+  text-align: center;
+  width: 200px;
+}
