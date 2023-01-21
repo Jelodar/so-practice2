@@ -1,13 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import withDataFetch from '../HOC/withDataFetch';
+import RepoListManager from '../components/RepoListManager';
 import { REPO_DETAILS } from '../routes';
-import { Link } from 'react-router-dom';
+import { API_ENDPOINT } from '../config';
 
-function HomePage() {
+function RemoteRepoListManager(props: any) {
+  return withDataFetch({
+    dataComponent: RepoListManager,
+    url: API_ENDPOINT,
+    targetPropName: 'repos',
+  })(props);
+}
+
+function HomePage(props: object): JSX.Element {
+  const navigate = useNavigate();
+
   return (
     <>
-      <h1>Repos</h1>
-      <div>Repos listed here</div>
-      <Link to={REPO_DETAILS}>Details</Link>
+      <h1>Repo List:</h1>
+      <div className="repos-container">
+        <RemoteRepoListManager
+          onSelect={(repo: any) =>
+            navigate(REPO_DETAILS.replace(':id', repo.id))
+          }
+        />
+      </div>
     </>
   );
 }
